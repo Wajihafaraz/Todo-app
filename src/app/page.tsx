@@ -31,7 +31,7 @@ const addItems=()=>{
   }
 
   //edit function
-const editItem=(id:any)=>{
+const editItem=(id:string)=>{
 
  const obj=todos.find((item)=>item.id == id)
  if(obj){
@@ -42,7 +42,7 @@ const editItem=(id:any)=>{
 }
 //delete function
 
-const delItem=(id:any)=>{
+const delItem=(id:string)=>{
   const newArr = todos.filter(item=> item.id !== id)
     
   
@@ -80,7 +80,7 @@ const delItem=(id:any)=>{
       <div className="grid md:grid-cols-2 gap-4 md:gap-5  mt-2 ">
         {/* grid items */}
         {
-          todos.map((item, i) => {
+          todos.map((item,i) => {
             return (
 
               <div className="p-2 shadow rounded bg-yellow-100" key={i}>
