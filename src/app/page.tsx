@@ -1,5 +1,5 @@
 "use client"
-import { log } from "console";
+
 import { useState } from "react";
 
 
@@ -18,7 +18,7 @@ export default function Home() {
 const addItems=()=>{
     const obj =todos.find(item=> item.id ==id )
      if(obj){
-       let newArr = todos.filter(item=> item.id !== obj.id)
+       const newArr = todos.filter(item=> item.id !== obj.id)
         
     settodos([...newArr,{movie:inputVal,id:id}])
     setInput("")
@@ -33,7 +33,7 @@ const addItems=()=>{
   //edit function
 const editItem=(id:any)=>{
 
- let obj=todos.find((item)=>item.id == id)
+ const obj=todos.find((item)=>item.id == id)
  if(obj){
  setInput(obj.movie)
  setId(obj.id)
@@ -43,7 +43,7 @@ const editItem=(id:any)=>{
 //delete function
 
 const delItem=(id:any)=>{
-  let newArr = todos.filter(item=> item.id !== id)
+  const newArr = todos.filter(item=> item.id !== id)
     
   
   
