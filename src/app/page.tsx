@@ -67,7 +67,7 @@ const delItem=(id:string)=>{
         <input className=" w-[50%] md:w-[20%] flex justify-center  text-lg  border-b-4 ml-auto md:ml-3 focus:outline-none p-2 md:p-2" type="number"
         value={id}
         onChange={(e)=>setId(e.target.value)}
-        placeholder="Enter  id" />
+        placeholder="Enter id" />
 
         <button onClick={addItems}  className="bg-yellow-500 w-[50%]  md:p-1 md:w-[10%] p-1 md:mx-2 rounded hover:bg-orange-700 text-white text-lg">Add movie</button>
 
@@ -77,13 +77,13 @@ const delItem=(id:string)=>{
       <h1 className="text-center text-[30px] font-semibold underline mt-5">Movies List </h1>
       {/* movie list */}
 
-      <div className="grid md:grid-cols-2 gap-4 md:gap-5  mt-2 ">
+      <div className="grid md:grid-cols-2 gap-4 md:gap-5  mt-2  ">
         {/* grid items */}
         {
           todos.map((item,i) => {
             return (
 
-              <div className="p-2 shadow rounded bg-yellow-100" key={i}>
+              <div className="p-1 shadow rounded bg-yellow-100 " key={i}>
                 <div className="flex justify-between text-lg">
                   <span className="shadow rounded-full h-8 w-8 my-auto text-center " >{i + 1}</span>
                   <span onClick={()=>delItem(item.id)} className="shadow rounded-full h-8 mt-5 w-8 my-auto text-center text-red-700 cursor-pointer "> X </span>
