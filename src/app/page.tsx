@@ -8,35 +8,36 @@ export default function Home() {
 
   // define state 
   const [todos, settodos] = useState([
-    { movie: "chandu champion", id: 1 },
-    { movie: "hulchul", id: 2 }])
+    { movie: "chandu champion", id: "1" },
+    { movie: "hulchul", id: "2" }])
 
   const [inputVal, setInput] = useState("") //is input m humne value store kardi he input ki
-  const [id, setId] = useState(0)
+  const [id, setId] = useState("")
 
   //function
 const addItems=()=>{
-    let obj :any=todos.find(item=> item.id ==id )
+    const obj =todos.find(item=> item.id ==id )
      if(obj){
        let newArr = todos.filter(item=> item.id !== obj.id)
         
     settodos([...newArr,{movie:inputVal,id:id}])
     setInput("")
-    setId(0)
+    setId("")
       return
    }  
     settodos([...todos,{movie:inputVal,id:id}])
     setInput("")
-    setId(0)
+    setId("")
   }
 
   //edit function
 const editItem=(id:any)=>{
 
- let obj:any=todos.find((item)=>item.id == id)
+ let obj=todos.find((item)=>item.id == id)
+ if(obj){
  setInput(obj.movie)
  setId(obj.id)
-  
+ }
   
 }
 //delete function
@@ -57,18 +58,18 @@ const delItem=(id:any)=>{
       {/* start input */}
 
       <div className="flex justify-center mt-4 gap-4">
-        <input className="w-[100%] md:w-[40%] flex justify-center text-lg l-2 border-b-4  md:ml-3 focus:outline-none p-1 md:p-2" type="text"
+        <input className="w-[100%] md:w-[50%] flex justify-center md:text-lg  border-b-4 mx:1  md:mx-2 focus:outline-none p-1 md:p-3" type="text"
         value={inputVal}
           onChange={(e) => setInput(e.target.value)
           }
           placeholder="Enter movie name" />
 
-        <input className=" w-[30%] md:w-[10%] flex justify-center text-lg l-2 border-b-4 ml-auto md:ml-3 focus:outline-none p-2" type="number"
+        <input className=" w-[50%] md:w-[20%] flex justify-center  text-lg  border-b-4 ml-auto md:ml-3 focus:outline-none p-2 md:p-2" type="number"
         value={id}
         onChange={(e:any)=>setId(e.target.value)}
         placeholder="Enter  id" />
 
-        <button onClick={addItems}  className="bg-yellow-500 w-[50%]  md:p-1 md:w-[10%] rounded hover:bg-orange-700 text-white text-lg">Add movie</button>
+        <button onClick={addItems}  className="bg-yellow-500 w-[50%]  md:p-1 md:w-[10%] p-1 md:mx-2 rounded hover:bg-orange-700 text-white text-lg">Add movie</button>
 
       </div>
       {/* end input */}
@@ -82,12 +83,12 @@ const delItem=(id:any)=>{
           todos.map((item: any, i: any) => {
             return (
 
-              <div className="p-0 shadow rounded bg-yellow-100" key={i}>
+              <div className="p-2 shadow rounded bg-yellow-100" key={i}>
                 <div className="flex justify-between text-lg">
                   <span className="shadow rounded-full h-8 w-8 my-auto text-center " >{i + 1}</span>
                   <span onClick={()=>delItem(item.id)} className="shadow rounded-full h-8 mt-5 w-8 my-auto text-center text-red-700 cursor-pointer "> X </span>
                 </div>
-                {/* dat div */}
+                {/* data div */}
                 <div className=" text-[30px] text-gray-800"> {item.movie}</div>
                 <div onClick={()=>editItem(item.id)}  className="text-right text-lg cursor-pointer">Edit</div>
                 <h2 className="text-orange-500">id:{item.id}</h2>
