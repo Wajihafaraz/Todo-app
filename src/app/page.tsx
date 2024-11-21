@@ -66,7 +66,7 @@ const delItem=(id:any)=>{
 
         <input className=" w-[50%] md:w-[20%] flex justify-center  text-lg  border-b-4 ml-auto md:ml-3 focus:outline-none p-2 md:p-2" type="number"
         value={id}
-        onChange={(e:any)=>setId(e.target.value)}
+        onChange={(e)=>setId(e.target.value)}
         placeholder="Enter  id" />
 
         <button onClick={addItems}  className="bg-yellow-500 w-[50%]  md:p-1 md:w-[10%] p-1 md:mx-2 rounded hover:bg-orange-700 text-white text-lg">Add movie</button>
