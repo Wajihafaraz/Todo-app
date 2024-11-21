@@ -80,7 +80,7 @@ const delItem=(id:any)=>{
       <div className="grid md:grid-cols-2 gap-4 md:gap-5  mt-2 ">
         {/* grid items */}
         {
-          todos.map((item: any, i: any) => {
+          todos.map((item, i) => {
             return (
 
               <div className="p-2 shadow rounded bg-yellow-100" key={i}>
