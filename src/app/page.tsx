@@ -57,19 +57,19 @@ const delItem=(id:string)=>{
       <h1 className="text-center md:text-center text-[30px] font-semibold ">Todo App by Wajiha Naz</h1>
       {/* start input */}
 
-      <div className="flex justify-center mt-4 gap-4">
-        <input className="w-[100%] md:w-[50%] flex justify-center md:text-lg  border-b-4 mx:1  md:mx-2 focus:outline-none p-1 md:p-3" type="text"
+      <div className="flex flex-col md:flex-row md:justify-center mt-4 gap-4">
+        <input className="w-[100%] md:w-[50%] flex justify-center md:text-lg  border-b-4 mx:1  md:mx-2 focus:outline-none p-2 md:p-3" type="text"
         value={inputVal}
           onChange={(e) => setInput(e.target.value)
           }
           placeholder="Enter movie name" />
 
-        <input className=" w-[50%] md:w-[20%] flex justify-center  text-lg  border-b-4 ml-auto md:ml-3 focus:outline-none p-2 md:p-2" type="number"
+        <input className=" w-[50%] md:w-[20%] flex  md:justify-center  text-lg  border-b-4 ml-1 md:ml-3 focus:outline-none p-2 md:p-2" type="number"
         value={id}
         onChange={(e)=>setId(e.target.value)}
         placeholder="Enter id" />
 
-        <button onClick={addItems}  className="bg-yellow-500 w-[50%]  md:p-1 md:w-[10%] p-1 md:mx-2 rounded hover:bg-orange-700 text-white text-lg">Add movie</button>
+        <button onClick={addItems}  className="bg-yellow-500 w-[50%] -mt-14 mx-48 md:m-1 md:p-1 md:w-[10%] p-1 md:mx-2 rounded hover:bg-orange-700 text-white text-lg">Add movie</button>
 
       </div>
       {/* end input */}
